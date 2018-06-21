@@ -3,13 +3,13 @@ from itertools import cycle
 import matplotlib.pyplot as plt
 from matplotlib.sankey import Sankey
 
-links_per_side = 7
+links_per_side = 10
 
 
 def side(sankey, n=1):
     """Generate a side chain."""
     prior = len(sankey.diagrams)
-    for i in range(0, 2*n, 2):
+    for i in range(0, 3*n, 2):
         sankey.add(flows=[1, -1], orientations=[-1, -1],
                    patchlabel=str(prior + i),
                    prior=prior + i - 1, connect=(1, 0), alpha=0.5)
